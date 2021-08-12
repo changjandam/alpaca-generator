@@ -1,37 +1,35 @@
 import React from 'react'
-import blue50 from './alpaca/backgrounds/blue50.png'
-import './App.css'
+import Section from './components/Alpaca/Section'
+import styled from 'styled-components'
+
+const StyledMain = styled.main`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+const StyledDiv = styled.div`
+  padding: 40px;
+  background: lightgray;
+  box-shadow: 3px 3px gray;
+`
+
+const H1 = styled.h1`
+  margin-top: 0px;
+`
 
 function App () {
   return (
-    <main>
-      <header>
-        <h1 id='title'>Alpaca generator</h1>
-      </header>
-      <section>
-        <div id="output">
-          <div id="display-alpaca">
-            <img src={blue50} alt="" />
-          </div>
-          <button id="download" className="white">Download</button>
-        </div>
-        <div id="selectors">
-          <div id="parts">
-            <h2 id="parts-title">ACCESSORIZE THE ALPACA&apos;S</h2>
-            <div id="parts-btn-group">
-              <button className="selector">btn</button>
-            </div>
-          </div>
-          <div id="styles">
-            <h2 id="styles-title">STYLE</h2>
-            <div id="styles-btn-group">
-              <button className="selector">btn</button>
-            </div>
-          </div>
-          <button id="random" className="white">Random</button>
-        </div>
-      </section>
-    </main>
+    <StyledMain>
+      <StyledDiv>
+        <header>
+          <H1 id='title'>Alpaca generator</H1>
+        </header>
+        <Section />
+      </StyledDiv>
+    </StyledMain>
   )
 }
 
