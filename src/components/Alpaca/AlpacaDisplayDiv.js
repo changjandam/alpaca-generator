@@ -16,7 +16,6 @@ const RelativeDiv = styled.div`
 `
 
 const AlpacaDisplayDiv = (props) => {
-  console.log(props)
   return (
     <div id='output'>
       <RelativeDiv>

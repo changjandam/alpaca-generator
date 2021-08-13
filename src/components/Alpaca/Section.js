@@ -29,12 +29,19 @@ const Section = () => {
   const [currentPart, setCurrentPart] = useState('ACCESSORIES')
   const [currentStyle, setCurrentStyle] = useState('flower')
 
+  const findCurrentStyleKey = (partKey, styles) => {
+    const currentStyles = ALPACA[partKey]
+    const currentStyleValue = styles[partKey]
+    return Object.keys(currentStyles).find(style => currentStyles[style] === currentStyleValue)
+  }
+
   const randomPartsHandler = () => {
     const randomPickStyle = (partObject) => {
       const styleValues = Object.values(partObject)
       return styleValues[Math.floor(Math.random() * styleValues.length)]
     }
-    setAllSelectedParts({
+
+    const randomStyles = {
       ACCESSORIES: randomPickStyle(ALPACA.ACCESSORIES),
       BACKGROUNDS: randomPickStyle(ALPACA.BACKGROUNDS),
       EARS: randomPickStyle(ALPACA.EARS),
@@ -44,21 +51,30 @@ const Section = () => {
       MOUTH: randomPickStyle(ALPACA.MOUTH),
       NECK: randomPickStyle(ALPACA.NECK),
       NOSE: ALPACA.NOSE.default
-    })
+    }
+    setAllSelectedParts(randomStyles)
+    const styleKey = findCurrentStyleKey(currentPart, randomStyles)
+    setCurrentStyle(styleKey)
   }
 
-  const partChageHandler = (part) => {
-    setCurrentPart(currentPart)
+  const partChageHandler = (event) => {
+    setCurrentPart(event.target.id)
+    const currentStyleKey = findCurrentStyleKey(event.target.id, allSelectedParts)
+    setCurrentStyle(currentStyleKey)
   }
 
-  const styleChangeHandler = (style) => {
-    setCurrentStyle(currentStyle)
+  const styleChangeHandler = (event) => {
+    setAllSelectedParts((preAllselectedParts) => ({
+      ...preAllselectedParts,
+      [currentPart]: ALPACA[currentPart.toString()][event.target.id.toString()]
+    }))
+    setCurrentStyle(event.target.id)
   }
 
   return (
     <GridSection>
       <AlpacaDisplayDiv allSelectedParts={allSelectedParts} />
-      <Selectors partsData={ALPACA} part={currentPart} onPartChange={partChageHandler} style={currentStyle} onStyleChange={styleChangeHandler} />
+      <Selectors partsData={ALPACA} currentPart={currentPart} onPartChange={partChageHandler} currentStyle={currentStyle} onStyleChange={styleChangeHandler} />
       <MethodButton id='download'><strong>Download</strong></MethodButton>
       <MethodButton id='random' onClick={randomPartsHandler}><strong>Random</strong></MethodButton>
     </GridSection>

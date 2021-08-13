@@ -8,7 +8,7 @@ const MethodButton = styled.button`
   background: #FFFFFF;
 
   &&:hover {
-    transform: scale(1.1)
+    transform: scale(1.05)
   }
 `
 export default MethodButton

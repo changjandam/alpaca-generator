@@ -8,9 +8,10 @@ const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 `
 const StyledDiv = styled.div`
+  position: relative;
+  top: 150px;
   padding: 40px;
   background: lightgray;
   box-shadow: 3px 3px gray;

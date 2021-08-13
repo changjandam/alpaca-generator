@@ -14,15 +14,17 @@ const Selectors = (props) => {
         <H2 id='parts-title'>ACCESSORIZE THE ALPACA&apos;S</H2>
         <div id='parts-btn-group'>
           {Object.keys(props.partsData).map(part => {
-            return (<SelectorButton key={part}>{part.toString().toLowerCase()}</SelectorButton>)
+            if (part === props.currentPart) return (<SelectorButton key={part} id={part} onClick={props.onPartChange} selected>{part.toString().toLowerCase()}</SelectorButton>)
+            return (<SelectorButton key={part} id={part} onClick={props.onPartChange}>{part.toString().toLowerCase()}</SelectorButton>)
           })}
         </div>
       </div>
       <div id='styles'>
         <H2 id='styles-title'>STYLE</H2>
         <div id='styles-btn-group'>
-          {Object.keys(props.partsData[props.part]).map(style => {
-            return (<SelectorButton key={style}>{style.toString().toLowerCase()}</SelectorButton>)
+          {Object.keys(props.partsData[props.currentPart]).map(style => {
+            if (style === props.currentStyle) return (<SelectorButton key={style} id={style} onClick={props.onStyleChange} selected>{style.toString().toLowerCase()}</SelectorButton>)
+            return (<SelectorButton key={style} id={style} onClick={props.onStyleChange}>{style.toString().toLowerCase()}</SelectorButton>)
           })}
         </div>
       </div>
@@ -32,9 +34,9 @@ const Selectors = (props) => {
 
 Selectors.propTypes = {
   partsData: Proptypes.object,
-  part: Proptypes.string,
+  currentPart: Proptypes.string,
   onPartChange: Proptypes.func,
-  style: Proptypes.string,
+  currentStyle: Proptypes.string,
   onStyleChange: Proptypes.func
 }
 
