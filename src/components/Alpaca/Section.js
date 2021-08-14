@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import * as htmlToImage from 'html-to-image'
+import { toPng } from 'html-to-image'
+import download from 'downloadjs'
 
 import Selectors from './Selectors'
 import MethodButton from '../UI/MethodButton'
@@ -15,15 +18,15 @@ const GridSection = styled.section`
 
 const Section = () => {
   const [allSelectedParts, setAllSelectedParts] = useState({
-    ACCESSORIES: ALPACA.ACCESSORIES.flower,
     BACKGROUNDS: ALPACA.BACKGROUNDS.blue50,
     EARS: ALPACA.EARS.default,
-    EYES: ALPACA.EYES.default,
+    NECK: ALPACA.NECK.default,
+    NOSE: ALPACA.NOSE.default,
     HAIR: ALPACA.HAIR.default,
     LEG: ALPACA.LEG.bubbleTea,
+    EYES: ALPACA.EYES.default,
     MOUTH: ALPACA.MOUTH.default,
-    NECK: ALPACA.NECK.default,
-    NOSE: ALPACA.NOSE.default
+    ACCESSORIES: ALPACA.ACCESSORIES.flower
   })
 
   const [currentPart, setCurrentPart] = useState('ACCESSORIES')
@@ -42,15 +45,15 @@ const Section = () => {
     }
 
     const randomStyles = {
-      ACCESSORIES: randomPickStyle(ALPACA.ACCESSORIES),
       BACKGROUNDS: randomPickStyle(ALPACA.BACKGROUNDS),
       EARS: randomPickStyle(ALPACA.EARS),
-      EYES: randomPickStyle(ALPACA.EYES),
+      NECK: randomPickStyle(ALPACA.NECK),
+      NOSE: ALPACA.NOSE.default,
       HAIR: randomPickStyle(ALPACA.HAIR),
       LEG: randomPickStyle(ALPACA.LEG),
+      EYES: randomPickStyle(ALPACA.EYES),
       MOUTH: randomPickStyle(ALPACA.MOUTH),
-      NECK: randomPickStyle(ALPACA.NECK),
-      NOSE: ALPACA.NOSE.default
+      ACCESSORIES: randomPickStyle(ALPACA.ACCESSORIES)
     }
     setAllSelectedParts(randomStyles)
     const styleKey = findCurrentStyleKey(currentPart, randomStyles)
@@ -71,11 +74,19 @@ const Section = () => {
     setCurrentStyle(event.target.id)
   }
 
+  const downloadHandler = () => {
+    const displayDiv = document.getElementById('output').firstChild
+    console.log(displayDiv)
+    htmlToImage.toPng(displayDiv).then((dataUrl) => {
+      download(dataUrl, 'my-alpaca.png')
+    })
+  }
+
   return (
     <GridSection>
       <AlpacaDisplayDiv allSelectedParts={allSelectedParts} />
       <Selectors partsData={ALPACA} currentPart={currentPart} onPartChange={partChageHandler} currentStyle={currentStyle} onStyleChange={styleChangeHandler} />
-      <MethodButton id='download'><strong>Download</strong></MethodButton>
+      <MethodButton id='download' onClick={downloadHandler}><strong>Download</strong></MethodButton>
       <MethodButton id='random' onClick={randomPartsHandler}><strong>Random</strong></MethodButton>
     </GridSection>
   )
