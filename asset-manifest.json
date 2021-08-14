@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/alpaca-image-generator/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/alpaca-image-generator/static/js/main.62ade5ce.chunk.js",
-    "main.js.map": "/alpaca-image-generator/static/js/main.62ade5ce.chunk.js.map",
-    "runtime-main.js": "/alpaca-image-generator/static/js/runtime-main.96010ea7.js",
-    "runtime-main.js.map": "/alpaca-image-generator/static/js/runtime-main.96010ea7.js.map",
-    "static/js/2.08d77bef.chunk.js": "/alpaca-image-generator/static/js/2.08d77bef.chunk.js",
-    "static/js/2.08d77bef.chunk.js.map": "/alpaca-image-generator/static/js/2.08d77bef.chunk.js.map",
-    "static/js/3.9c24c3f6.chunk.js": "/alpaca-image-generator/static/js/3.9c24c3f6.chunk.js",
-    "static/js/3.9c24c3f6.chunk.js.map": "/alpaca-image-generator/static/js/3.9c24c3f6.chunk.js.map",
-    "index.html": "/alpaca-image-generator/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/alpaca-image-generator/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.08d77bef.chunk.js.LICENSE.txt": "/alpaca-image-generator/static/js/2.08d77bef.chunk.js.LICENSE.txt"
+    "main.css": "/alpaca-generator/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/alpaca-generator/static/js/main.62ade5ce.chunk.js",
+    "main.js.map": "/alpaca-generator/static/js/main.62ade5ce.chunk.js.map",
+    "runtime-main.js": "/alpaca-generator/static/js/runtime-main.77986a22.js",
+    "runtime-main.js.map": "/alpaca-generator/static/js/runtime-main.77986a22.js.map",
+    "static/js/2.d7039fe8.chunk.js": "/alpaca-generator/static/js/2.d7039fe8.chunk.js",
+    "static/js/2.d7039fe8.chunk.js.map": "/alpaca-generator/static/js/2.d7039fe8.chunk.js.map",
+    "static/js/3.9c24c3f6.chunk.js": "/alpaca-generator/static/js/3.9c24c3f6.chunk.js",
+    "static/js/3.9c24c3f6.chunk.js.map": "/alpaca-generator/static/js/3.9c24c3f6.chunk.js.map",
+    "index.html": "/alpaca-generator/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/alpaca-generator/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.d7039fe8.chunk.js.LICENSE.txt": "/alpaca-generator/static/js/2.d7039fe8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.96010ea7.js",
-    "static/js/2.08d77bef.chunk.js",
+    "static/js/runtime-main.77986a22.js",
+    "static/js/2.d7039fe8.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
     "static/js/main.62ade5ce.chunk.js"
   ]
