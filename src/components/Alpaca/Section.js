@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import * as htmlToImage from 'html-to-image'
-import { toPng } from 'html-to-image'
 import download from 'downloadjs'
 
 import Selectors from './Selectors'
