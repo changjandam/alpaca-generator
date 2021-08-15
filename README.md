@@ -15,6 +15,7 @@ This project is from [HERE](https://www.codementor.io/projects/web/alpaca-image-
 * react lifting state up
 * react custom component
 * styled-component
+* RWD
 * prop-types
 * downloadjs
 * html-to-image
