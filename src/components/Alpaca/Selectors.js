@@ -14,8 +14,8 @@ const Selectors = (props) => {
         <H2 id='parts-title'>ACCESSORIZE THE ALPACA&apos;S</H2>
         <div id='parts-btn-group'>
           {Object.keys(props.partsData).map(part => {
-            if (part === props.currentPart) return (<SelectorButton key={part} id={part} onClick={props.onPartChange} selected>{part.toString().toLowerCase()}</SelectorButton>)
-            return (<SelectorButton key={part} id={part} onClick={props.onPartChange}>{part.toString().toLowerCase()}</SelectorButton>)
+            const selectedPart = part === props.currentPart
+            return (<SelectorButton key={part} id={part} onClick={props.onPartChange} selected={selectedPart}>{part.toString().toLowerCase()}</SelectorButton>)
           })}
         </div>
       </div>
@@ -23,8 +23,8 @@ const Selectors = (props) => {
         <H2 id='styles-title'>STYLE</H2>
         <div id='styles-btn-group'>
           {Object.keys(props.partsData[props.currentPart]).map(style => {
-            if (style === props.currentStyle) return (<SelectorButton key={style} id={style} onClick={props.onStyleChange} selected>{style.toString().toLowerCase()}</SelectorButton>)
-            return (<SelectorButton key={style} id={style} onClick={props.onStyleChange}>{style.toString().toLowerCase()}</SelectorButton>)
+            const selectedStyle = style === props.currentStyle
+            return (<SelectorButton key={style} id={style} onClick={props.onStyleChange} selected={selectedStyle}>{style.toString().toLowerCase()}</SelectorButton>)
           })}
         </div>
       </div>
