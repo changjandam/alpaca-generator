@@ -13,6 +13,11 @@ const GridSection = styled.section`
   grid-template-columns: 300px 300px;
   grid-template-rows: auto auto;
   grid-gap: 20px;
+
+  @media(max-width: 700px) {
+    grid-template-columns: 300px;
+    grid-template-rows: 300px repeat(auto, 3);
+  }
 `
 
 const Section = () => {

@@ -3,18 +3,25 @@ import Section from './components/Alpaca/Section'
 import styled from 'styled-components'
 
 const StyledMain = styled.main`
-  height: 100vh;
+  height: calc(100vh - 150px);
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 150px;
+
+  @media(max-width: 700px) {
+    height: 100vh;
+    justify-content: center;
+    padding-top: 0px;
+  }
 `
 const StyledDiv = styled.div`
   position: relative;
-  top: 150px;
   padding: 40px;
   background: lightgray;
   box-shadow: 3px 3px gray;
+
 `
 
 const H1 = styled.h1`
