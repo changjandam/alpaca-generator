@@ -80,7 +80,6 @@ const Section = () => {
 
   const downloadHandler = () => {
     const displayDiv = document.getElementById('output').firstChild
-    console.log(displayDiv)
     htmlToImage.toPng(displayDiv).then((dataUrl) => {
       download(dataUrl, 'my-alpaca.png')
     })
